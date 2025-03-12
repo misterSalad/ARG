@@ -10,6 +10,7 @@
             color: red;
             text-align: center;
             font-family: 'Courier New', monospace;
+            display: none; /* Ukrywamy stronę do czasu wprowadzenia hasła */
         }
         .glitch {
             font-size: 24px;
@@ -29,9 +30,29 @@
             height: auto;
             filter: grayscale(100%) contrast(150%);
         }
+        .jumpscare {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+        }
+        .jumpscare img {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
+    <div class="jumpscare" id="jumpscare">
+        <img src="jumpscare.jpg" alt="Jumpscare">
+        <audio id="scareSound" src="scream.mp3"></audio>
+    </div>
+
     <h1 class="glitch">Doktorzy, którzy zaginęli...</h1>
     <img src="doctor_missing.jpg" alt="Zaginiony doktor">
     <p>Dr. A. Kowalski - 14.07.2008 - Zaginiony</p>
@@ -39,14 +60,26 @@
     <p>Dr. T. Zieliński - 21.10.2015 - Ostatni wpis w dzienniku: "Oni nas obserwują..."</p>
     
     <!-- Ukryta wiadomość -->
-    <!-- Hasło: S2FuZHlkaQ== -->
-    
+    <!-- Hasło: S2FuZHlkaQ== (Po rozszyfrowaniu: Kandyki) -->
+
     <script>
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'd') {
-                alert('Notatka doktora Zielińskiego: "Nie ufaj nikomu."');
+        window.onload = function() {
+            let password = prompt("Podaj hasło dostępu:");
+            if (password === "Kandyki") {
+                document.body.style.display = "block"; // Odsłaniamy stronę
+            } else {
+                // Uruchamiamy jumpscare
+                let jumpscareDiv = document.getElementById("jumpscare");
+                let sound = document.getElementById("scareSound");
+
+                jumpscareDiv.style.display = "flex";
+                sound.play();
+
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Cofnięcie gracza na stronę główną
+                }, 3000); // Po 3 sekundach wraca na index.html
             }
-        });
+        };
     </script>
 
     <a href="index.html">Powrót</a>
