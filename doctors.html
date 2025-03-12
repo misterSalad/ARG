@@ -30,35 +30,9 @@
             height: auto;
             filter: grayscale(100%) contrast(150%);
         }
-        .jumpscare {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            visibility: hidden;
-            opacity: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .jumpscare img {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-        }
     </style>
 </head>
 <body>
-    <div class="jumpscare" id="jumpscare">
-        <img src="jumpscare.jpg" alt="Jumpscare">
-        <audio id="scareSound" src="scream.mp3"></audio>
-    </div>
-
     <h1 class="glitch">Doktorzy, którzy zaginęli...</h1>
     <img src="doctor_missing.jpg" alt="Zaginiony doktor">
     <p>Dr. A. Kowalski - 14.07.2008 - Zaginiony</p>
@@ -74,17 +48,7 @@
             if (password === "Kandyki") {
                 document.body.style.display = "block"; // Odsłaniamy stronę
             } else {
-                let jumpscareDiv = document.getElementById("jumpscare");
-                let sound = document.getElementById("scareSound");
-
-                jumpscareDiv.style.visibility = "visible"; // Pokazujemy jumpscare
-                jumpscareDiv.style.opacity = "1"; // Efekt pojawienia
-                sound.volume = 1.0; // Maksymalna głośność
-                sound.play();
-
-                setTimeout(() => {
-                    window.location.href = "index.html"; // Cofnięcie gracza na stronę główną
-                }, 3000); // Po 3 sekundach wraca na index.html
+                window.location.href = "jumpscare.html"; // Przenosi gracza na jumpscare
             }
         };
     </script>

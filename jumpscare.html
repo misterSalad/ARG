@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!!</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .jumpscare {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img class="jumpscare" src="jumpscare.jpg" alt="Jumpscare">
+    <audio id="scareSound" src="scream.mp3" autoplay></audio>
+
+    <script>
+        let sound = document.getElementById("scareSound");
+        sound.volume = 1.0; // Maksymalna głośność
+
+        setTimeout(() => {
+            window.location.href = "index.html"; // Po 3 sekundach wraca na stronę główną
+        }, 3000);
+    </script>
+</body>
+</html>
