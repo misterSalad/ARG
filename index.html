@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        .hidden {
+            display: none;
+        }
+        .glitch {
+            font-size: 24px;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px red; }
+            100% { text-shadow: 2px 2px red; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch">Czy ktoś tu jest?</h1>
+    <p>...</p>
+    
+    <!-- Ukryta wiadomość w kodzie źródłowym -->
+    <!-- Klucz: X29id3lhbC0yMDE2 -->
+    
+    <script>
+        // Ukryty kod JavaScript, który wyświetla wskazówkę po naciśnięciu klawisza
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'x') {
+                alert('Czujesz, że to dopiero początek...');
+            }
+        });
+    </script>
+</body>
+</html>
