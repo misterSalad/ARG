@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obiekty badawcze</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        .glitch {
+            font-size: 24px;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px red; }
+            100% { text-shadow: 2px 2px red; }
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+        img {
+            width: 600px;
+            height: auto;
+            filter: grayscale(100%) contrast(150%);
+        }
+    </style>
 </head>
 <body>
-    <h1>Obiekty przechowywane w Instytucie</h1>
+    <h1 class="glitch">Obiekty przechowywane w Instytucie</h1>
+    <img src="object_shadow.jpg" alt="Nieznany obiekt">
     <p>Obiekt #001 - [DANE USUNIĘTE]</p>
     <p>Obiekt #013 - "Cień Bez Twarzy" - Przemieszcza się tylko, gdy nie jest obserwowany.</p>
     <p>Obiekt #666 - "Szeptacz" - Słychać go w nocy, nie odpowiadaj.</p>

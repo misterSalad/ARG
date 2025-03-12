@@ -4,15 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doktorzy Instytutu</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+        .glitch {
+            font-size: 24px;
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px red; }
+            100% { text-shadow: 2px 2px red; }
+        }
+        a {
+            color: red;
+            text-decoration: none;
+        }
+        img {
+            width: 600px;
+            height: auto;
+            filter: grayscale(100%) contrast(150%);
+        }
+    </style>
 </head>
 <body>
-    <h1>Doktorzy, którzy zaginęli...</h1>
+    <h1 class="glitch">Doktorzy, którzy zaginęli...</h1>
+    <img src="doctor_missing.jpg" alt="Zaginiony doktor">
     <p>Dr. A. Kowalski - 14.07.2008 - Zaginiony</p>
     <p>Dr. M. Nowak - 02.03.2011 - Znaleziony martwy</p>
     <p>Dr. T. Zieliński - 21.10.2015 - Ostatni wpis w dzienniku: "Oni nas obserwują..."</p>
     
+    <!-- Ukryta wiadomość -->
     <!-- Hasło: S2FuZHlkaQ== -->
     
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'd') {
+                alert('Notatka doktora Zielińskiego: "Nie ufaj nikomu."');
+            }
+        });
+    </script>
+
     <a href="index.html">Powrót</a>
 </body>
 </html>

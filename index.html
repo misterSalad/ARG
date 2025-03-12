@@ -15,27 +15,35 @@
             display: none;
         }
         .glitch {
-            font-size: 24px;
+            font-size: 32px;
+            font-weight: bold;
             animation: glitch 1s infinite;
         }
         @keyframes glitch {
-            0% { text-shadow: 2px 2px red; }
-            50% { text-shadow: -2px -2px red; }
-            100% { text-shadow: 2px 2px red; }
+            0% { text-shadow: 3px 3px red; }
+            50% { text-shadow: -3px -3px red; }
+            100% { text-shadow: 3px 3px red; }
         }
         a {
             color: red;
             text-decoration: none;
+            font-size: 20px;
+        }
+        img {
+            width: 800px;
+            height: auto;
+            filter: grayscale(100%) contrast(150%);
         }
     </style>
 </head>
 <body>
     <h1 class="glitch">Instytut N.O.X.</h1>
     <p>Nie powinieneś tu być...</p>
-    <img src="creepy_lab.jpg" alt="Opuszczony Instytut" width="400">
+    <img src="creepy_lab.jpg" alt="Opuszczony Instytut">
     <p><a href="doctors.html">Doktorzy Instytutu</a></p>
     <p><a href="objects.html">Obiekty badawcze</a></p>
     
+    <!-- Ukryta wiadomość w kodzie źródłowym -->
     <!-- Klucz: VG9XaG8tTWljaGFsbA== -->
     
     <script>
