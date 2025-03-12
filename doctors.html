@@ -40,7 +40,7 @@
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 9999;
         }
         .jumpscare img {
             width: 100vw;
@@ -70,12 +70,11 @@
             if (password === "Kandyki") {
                 document.body.style.display = "block"; // Odsłaniamy stronę
             } else {
-                // Uruchamiamy jumpscare
                 let jumpscareDiv = document.getElementById("jumpscare");
                 let sound = document.getElementById("scareSound");
 
-                jumpscareDiv.style.display = "flex";
-                sound.volume = 3.0; // Zwiększenie głośności 3x
+                jumpscareDiv.style.display = "flex"; // Pokaż jumpscare
+                sound.volume = 3.0; // Ustaw maksymalną głośność
                 sound.play();
 
                 setTimeout(() => {
